@@ -30,10 +30,7 @@ node.js를 활용한 restful api 백엔드 구축 프로젝트입니다.
 이름으로 jwt 발급 |
 | POST | /book | post body에 담긴 book 정보로 새로운 자원 생성 |
 | GET | /book | 모든 책 정보 요청 |
-| GET | /book/<condition>/<value>
-{?order=[asc|desc]} | params, query에 
-해당하는 자원 요청. value와 query에
-유효하지 않은 경로는 무시 |
+| GET | /book/\<condition>/\<value>{?order=[asc\|desc]} | params, query에 해당하는 자원 요청. value와 query에유효하지 않은 경로는 무시 |
 | PATCH | /<serial> | serial에 해당하는 자원 
 수정 요청 |
 | DELETE | /<serial> | serial에 해당하는 자원 
@@ -50,8 +47,7 @@ node.js를 활용한 restful api 백엔드 구축 프로젝트입니다.
 | serial | 책에 부여하는 고유번호 | 숫자형 | O |
 | title | 책 제목 | 문자열 | X |
 | price | 책 가격 | 숫자형 | X |
-| release | 출간일 | ‘yyyy-mm-dd’ 형식을 
-따르는 문자열 | X |
+| release | 출간일 | ‘yyyy-mm-dd’ 형식을 따르는 문자열 | X |
 | staff | 책 정보를 등록한 직원 | 문자열 | X |
 | author | 저자 | 문자열 | X |
 | publisher | 출판사 | 문자열 | X |
@@ -230,7 +226,7 @@ value가 올바르지 않더라도 `4xx client error` 를 응답하지 않고, `
 | serial | 숫자형 | /book/serial/1 |
 | price | <숫자형>to<숫자형> | /book/price/10000to30000 |
 | title | 문자열 | /book/title/프로그래밍 |
-| release | <yyyy-mm-dd>to<yyyy-mm-dd> | /book/release/2019-01-01to2021-12-31 |
+| release | \<yyyy-mm-dd>to\<yyyy-mm-dd> | /book/release/2019-01-01to2021-12-31 |
 | staff | 문자열 | /book/staff/홍길동 |
 | author | 문자열 | /book/author/철수 |
 | publisher | 문자열 | /book/publisher/네모출판 |
